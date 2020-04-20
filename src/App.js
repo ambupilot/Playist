@@ -5,6 +5,7 @@ import SongsTable from './SongsTable'
 
 const App = () => {
 
+  // tijdelijke data
 const songsData = [
   { id: 1, title: 'Money for nothing', artist: 'Dire Straits', genre: 'rock', rating: 4 },
   { id: 2, title: 'Looking for the summer', artist: 'Chris Rea', genre: 'rock', rating: 5 },

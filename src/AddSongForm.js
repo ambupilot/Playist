@@ -14,21 +14,23 @@ const [ song, setSong ] = useState(initialFormState)
 const handleInputChange = event => {
     const { name, value } = event.target
 
-        // effe checken
-    console.log('event.target',event.target)
-    console.log('event.target.value ', event.target.value)
-    console.log('[name]: value ',{[name]: value})
-    console.log('waarde van song voor set',song);
-  
-    setSong({ ...song, [name]: value })
+    // effe checken
+    //console.log('event.target',event.target)
+    //console.log('event.target.value ', event.target.value)
+    //console.log('[name]: value ',{[name]: value})
+    //console.log('waarde van song voor set',song);
+    
+    const songid = props.songGenres.length + 1
+    //console.log('song id moet worden: ', songid)
+
+    setSong({ ...song, id: songid, [name]: value })
     console.log('waarde van song ',song);
 }
 
     return (
         <form onSubmit={event => {
             event.preventDefault()
-            if (!song.inputSongTitle || !song.inputSongArtist) 
-            return
+            if (!song.inputSongTitle || !song.inputSongArtist) return
 
             props.addSong(song)
             setSong(initialFormState)
