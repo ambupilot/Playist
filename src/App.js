@@ -15,9 +15,10 @@ const songsData = [
 ]
 
 const [ songs , setSongs ] = useState(songsData)
+console.log('initiele songsData ', songsData);
 
 const addSong = song => {
-  song.id = songs.length +1
+  console.log('song in addSong: ',song)
   setSongs([ ...songs, song])
 }
 
@@ -51,7 +52,7 @@ const songRating = [
       <div className="content-container">
         <main>
           <h2>Input formulier</h2>
-          <AddSongForm addSong={addSong} songGenres={songGenres} songRating={songRating}/>
+          <AddSongForm songGenres={songGenres} songRating={songRating} addSong={addSong}/>
         </main>
         <div className="output">
           <SongsTable songs={songs} deleteSong={deleteSong}/>

@@ -4,10 +4,10 @@ const AddSongForm = props => {
 
 const initialFormState = {
     id: null,
-    inputSongTitle: '',
-    inputSongArtist: '',
-    selectGenre: '',
-    selectRating: ''
+    artist: '',
+    title: '',
+    genre: '',
+    rating: ''
 }
 const [ song, setSong ] = useState(initialFormState)
 
@@ -21,7 +21,6 @@ const handleInputChange = event => {
     //console.log('waarde van song voor set',song);
     
     const songid = props.songGenres.length + 1
-    //console.log('song id moet worden: ', songid)
 
     setSong({ ...song, id: songid, [name]: value })
     console.log('waarde van song ',song);
@@ -30,7 +29,7 @@ const handleInputChange = event => {
     return (
         <form onSubmit={event => {
             event.preventDefault()
-            if (!song.inputSongTitle || !song.inputSongArtist) return
+            if (!song.artist || !song.title) return
 
             props.addSong(song)
             setSong(initialFormState)
@@ -39,31 +38,31 @@ const handleInputChange = event => {
     <div className="formRow">
         <input
             type="text"
-            name="inputSongTitle"
-            value={song.inputSongTitle}
+            name="title"
+            value={song.title}
             onChange={handleInputChange}
             className="inputField"
             placeholder="Wat is de titel ?"
         />
         <input
             type="text"
-            name="inputSongArtist"
-            value={song.inputSongArtist}
+            name="artist"
+            value={song.artist}
             onChange={handleInputChange}
             className="inputField"
             placeholder="Wie is de artiest ?"
         />
-        <select id="selectGenre" name="selectGenre" className="selectInForm" onChange={handleInputChange}>
+        <select id="selectGenre" name="genre" className="selectInForm" value="0" onChange={handleInputChange}>
         {props.songGenres.length > 0 ? (
                 props.songGenres.map(genre => (
-                <option key={genre.id} value={genre.id}> {genre.name} </option>
+                <option key={genre.id} value={genre.genre}> {genre.name} </option>
                         ))
             ) : (
                 <option value="0">- geen opties -</option>
                 )
             }
         </select>
-        <select id="selectRating" name="selectRating" className="selectInForm" onChange={handleInputChange}>
+        <select id="selectRating" name="rating" className="selectInForm" value="0" onChange={handleInputChange}>
         {props.songRating.length > 0 ? (
                 props.songRating.map(rate => (
                         <option key={rate.id} value={rate.id}>{rate.name}</option>
