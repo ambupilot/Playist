@@ -13,6 +13,7 @@ const songsData = [
   { id: 4, title: 'Sierra', artist: 'Bosz Scaggs', genre: 'International', rating: 2 },
   { id: 5, title: 'Redbud tree', artist: 'Mark Knopfler', genre: 'rock', rating: 3 }
 ]
+
 const [ songs , setSongs ] = useState(songsData)
 
 const addSong = song => {
@@ -50,10 +51,10 @@ const songRating = [
       <div className="content-container">
         <main>
           <h2>Input formulier</h2>
-          <AddSongForm addSong={addSong} deleteSong={deleteSong} songGenres={songGenres} songRating={songRating}/>
+          <AddSongForm addSong={addSong} songGenres={songGenres} songRating={songRating}/>
         </main>
         <div className="output">
-          <SongsTable songs={songs}/>
+          <SongsTable songs={songs} deleteSong={deleteSong}/>
         </div>
       </div>
     </div>
