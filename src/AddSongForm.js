@@ -14,16 +14,10 @@ const [ song, setSong ] = useState(initialFormState)
 const handleInputChange = event => {
     const { name, value } = event.target
 
-    // effe checken
-    //console.log('event.target',event.target)
-    //console.log('event.target.value ', event.target.value)
-    //console.log('[name]: value ',{[name]: value})
-    //console.log('waarde van song voor set',song);
-    
-    const songid = props.songGenres.length + 1
+    const songid = Math.floor(Math.random() * 101)
 
     setSong({ ...song, id: songid, [name]: value })
-    console.log('waarde van song ',song);
+    //console.log('waarde van song ',song);
 }
 
     return (

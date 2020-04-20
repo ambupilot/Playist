@@ -6,21 +6,14 @@ import SongsTable from './SongsTable'
 const App = () => {
 
   // tijdelijke data
-const songsData = [
-  { id: 1, title: 'Money for nothing', artist: 'Dire Straits', genre: 'rock', rating: 4 },
-  { id: 2, title: 'Looking for the summer', artist: 'Chris Rea', genre: 'rock', rating: 5 },
-  { id: 3, title: 'Oude Maasweg', artist: 'Amazing stroopwafels', genre: 'Nederlands', rating: 5 },
-  { id: 4, title: 'Sierra', artist: 'Bosz Scaggs', genre: 'International', rating: 4 },
-  { id: 5, title: 'Redbud tree', artist: 'Mark Knopfler', genre: 'rock', rating: 5 }
-]
+const songsData = []
 
 const [ songs , setSongs ] = useState(songsData)
-console.log('initiele songsData ', songsData);
 
 const addSong = song => {
-  console.log('song in addSong: ',song)
   setSongs([ ...songs, song])
 }
+const sortGenre = songs.sort( (a) => a.genre )
 
 const deleteSong = id => {
   setSongs(songs.filter(song => song.id !== id))
@@ -55,7 +48,7 @@ const songRating = [
           <AddSongForm songGenres={songGenres} songRating={songRating} addSong={addSong}/>
         </main>
         <div className="output">
-          <SongsTable songs={songs} deleteSong={deleteSong}/>
+          <SongsTable songs={songs} deleteSong={deleteSong} sortGenre={sortGenre}/>
         </div>
       </div>
     </div>

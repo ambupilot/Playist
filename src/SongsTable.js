@@ -11,7 +11,7 @@ const SongsTable = props => (
                 <th className="song-row__item-heading">&nbsp;</th>
             </tr>
         </thead>
-        
+
         <tbody>
             {props.songs.length > 0 ? (
             props.songs.map(song => (
@@ -28,7 +28,7 @@ const SongsTable = props => (
                     ))
                 ) : (
                 <tr>
-                    <td colspan={5}>Geen songs opgegeven.</td>
+                    <td colSpan={5}>Nog geen songs opgegeven.</td>
                 </tr>
                 )
             }
