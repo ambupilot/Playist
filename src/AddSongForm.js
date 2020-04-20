@@ -52,7 +52,7 @@ const handleInputChange = event => {
             className="inputField"
             placeholder="Wie is de artiest ?"
         />
-        <select id="selectGenre" name="genre" className="selectInForm" value="0" onChange={handleInputChange}>
+        <select id="selectGenre" name="genre" className="selectInForm" value={song.genre} onChange={handleInputChange}>
         {props.songGenres.length > 0 ? (
                 props.songGenres.map(genre => (
                 <option key={genre.id} value={genre.genre}> {genre.name} </option>
@@ -62,7 +62,7 @@ const handleInputChange = event => {
                 )
             }
         </select>
-        <select id="selectRating" name="rating" className="selectInForm" value="0" onChange={handleInputChange}>
+        <select id="selectRating" name="rating" className="selectInForm" value={song.rating} onChange={handleInputChange}>
         {props.songRating.length > 0 ? (
                 props.songRating.map(rate => (
                         <option key={rate.id} value={rate.id}>{rate.name}</option>
