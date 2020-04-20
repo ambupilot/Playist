@@ -1,38 +1,103 @@
-.App {
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#root {
+  width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page {
+  border: 1px #000 solid;
+}
+
+header {
+  text-align: center;
+  background-color: lightgray;
+  height: 70px;
+  padding: 10px;
+  border-bottom: 1px solid #000;
+}
+
+.content-container {
+  display: flex-column;
+}
+
+main {
+  flex: 1;
+}
+main h2 {
+  padding-left: 20px;
+}
+.output {
+  flex: 1;
+}
+.song-table {
+  width: 100%;
+  background-color: #fff;
+}
+.song- header {}
+
+.song-row__item-heading {
+  text-align: left;
+}
+
+/* input form */
+.formrow {
+  display: flex;
+}
+.inputField {
+  width: 18%;
+  height: 25px;
+  margin: 10px 10px 20px 20px;
+  padding-left: 10px;;
+}
+.selectInForm {
+  width: 15%;
+  height: 30px;
+  margin-left: 10px;
+}
+.addBtnForm {
+  height: 30px;
+  margin-left: 10px;
+  width:  15%;
+  color:  #fff;
+  background-color: green;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-left: 50px;
+}
+
+/* songslist */
+
+.song-row__item {
+  text-align: left;
+  line-height: 30px;;
+}
+table ,th, td {
+  border: 0px;
+  border-spacing: 0;
+}
+th {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+}
+td, th {
+  padding-left: 10px;
+}
+tr:nth-child(odd) {
+  background: #ccc;
+}
+.text-center {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn-delete {
+  width:  80px;
+  color:  #fff;
+  background-color: red;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-transform: uppercase;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+footer {}
