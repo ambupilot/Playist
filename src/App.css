@@ -69,7 +69,9 @@ main h2 {
 }
 
 /* songslist */
-
+.song-header {
+  background-color: #fff;
+}
 .song-row__item {
   text-align: left;
   line-height: 30px;;
@@ -86,7 +88,7 @@ th {
 td, th {
   padding-left: 10px;
 }
-tr:nth-child(odd) {
+tr:nth-child(even) {
   background: #ccc;
 }
 .text-center {
